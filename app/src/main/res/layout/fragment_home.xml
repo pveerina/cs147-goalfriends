@@ -13,7 +13,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Find \n Friends"
-            android:id="@+id/find_friend_button" />
+            android:id="@+id/find_friend_button"
+            android:onClick="findFriends"/>
 
         <Button
             android:layout_width="wrap_content"
