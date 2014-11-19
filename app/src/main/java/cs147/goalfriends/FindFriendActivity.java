@@ -1,7 +1,10 @@
 package cs147.goalfriends;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.firebase.client.Firebase;
@@ -17,7 +20,9 @@ public class FindFriendActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_friend);
-        fb = new Firebase("https://<your-firebase>.firebaseio.com/");
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        fb = new Firebase("https://goalfriends.firebaseio.com/");
 
     }
     @Override
@@ -48,6 +53,17 @@ public class FindFriendActivity extends Activity {
 
     public void addFriend(View v) {
         fb.child("addfriend").setValue("me->tom");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

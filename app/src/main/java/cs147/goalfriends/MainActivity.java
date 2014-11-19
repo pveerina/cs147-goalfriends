@@ -24,6 +24,7 @@ import com.firebase.client.Firebase;
 
 public class MainActivity extends Activity implements ActionBar.TabListener {
 
+    public static final String NEXT_ACTIVITY_EXTRA = "nextactivity";
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -33,6 +34,9 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
      * {@link android.support.v13.app.FragmentStatePagerAdapter}.
      */
     SectionsPagerAdapter mSectionsPagerAdapter;
+    Profile myProfile;
+
+
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -45,6 +49,7 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
         setContentView(R.layout.activity_main);
 
         Firebase.setAndroidContext(this);
+        myProfile = new Profile("Dirk Nowitzski", "Arrillaga", "Weight Lifting");
 
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();
@@ -135,12 +140,13 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
             // Return a PlaceholderFragment (defined as a static inner class below).
             if (position == 0) {
                 return HomeFragment.newInstance(position +1);
+            } else if (position == 1) {
+                ProfileFragment pf = ProfileFragment.newInstance(position + 1);
+                pf.setProfile(myProfile);
+                return pf;
             } else {
                 return PlaceholderFragment.newInstance(position + 1);
             }
-
-
-
         }
 
         @Override
@@ -201,5 +207,22 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
         Intent intent = new Intent(this, FindFriendActivity.class);
         startActivity(intent);
     }
+
+    public void scheduleWorkout(View view) {
+        Intent intent = new Intent(this, FriendPickerActivity.class);
+        intent.putExtra(NEXT_ACTIVITY_EXTRA, ScheduleWorkoutActivity.class.getSimpleName());
+        startActivity(intent);
+    }
+
+    public void motivate(View view) {
+        Intent intent = new Intent(this, FriendPickerActivity.class);
+        intent.putExtra(NEXT_ACTIVITY_EXTRA, MotivateActivity.class.getSimpleName());
+        startActivity(intent);
+    }
+
+    public Profile getMyProfile() {
+        return myProfile;
+    }
+
 
 }
