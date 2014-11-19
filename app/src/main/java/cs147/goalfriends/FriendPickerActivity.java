@@ -1,8 +1,11 @@
 package cs147.goalfriends;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.firebase.client.Firebase;
@@ -15,6 +18,8 @@ public class FriendPickerActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_friend_picker);
 
 
@@ -58,5 +63,16 @@ public class FriendPickerActivity extends Activity {
             startActivity(intent);
         }
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

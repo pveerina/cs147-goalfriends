@@ -18,23 +18,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="090a4c64-be33-432e-8a2f-3143a9a7214f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/FindFriendActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/FindFriendActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/FriendPickerActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/FriendPickerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/HomeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/HomeFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/MotivateActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/MotivateActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/ProfileFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/ProfileFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/ScheduleWorkoutActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/ScheduleWorkoutActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_friend_picker.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_friend_picker.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_motivate.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_motivate.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_schedule_workout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_schedule_workout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Goalfriends.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -132,8 +116,8 @@
       <file leaf-file-name="FindFriendActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/FindFriendActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1125">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="66" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1460#1461#0" expanded="true" />
@@ -183,11 +167,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MotivateActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MotivateActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/MotivateActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.94152045" vertical-offset="372" max-vertical-offset="990">
-              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="477" max-vertical-offset="990">
+              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FriendPickerActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/FriendPickerActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5847953" vertical-offset="15" max-vertical-offset="1260">
+              <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -203,16 +199,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1542" max-vertical-offset="3120">
-              <caret line="155" column="9" selection-start-line="155" selection-start-column="9" selection-end-line="155" selection-end-column="9" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -965,7 +951,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_friend_picker.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_schedule_workout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_motivate.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/FriendPickerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/ProfileFragment.java" />
@@ -977,6 +962,7 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/ScheduleWorkoutActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/MotivateActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/FriendPickerActivity.java" />
       </list>
     </option>
   </component>
@@ -1500,14 +1486,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/FriendPickerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -1610,18 +1588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/FindFriendActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1125">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="66" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1460#1461#0" expanded="true" />
-            <element signature="e#1517#1518#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/ScheduleWorkoutActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="945">
@@ -1634,8 +1600,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/MotivateActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.94152045" vertical-offset="372" max-vertical-offset="990">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="477" max-vertical-offset="990">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/FindFriendActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1460#1461#0" expanded="true" />
+            <element signature="e#1517#1518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs147/goalfriends/FriendPickerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5847953" vertical-offset="15" max-vertical-offset="1260">
+          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
