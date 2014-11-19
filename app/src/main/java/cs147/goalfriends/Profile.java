@@ -1,5 +1,7 @@
 package cs147.goalfriends;
 
+import android.graphics.drawable.Drawable;
+
 import java.util.List;
 
 /**
@@ -12,6 +14,9 @@ public class Profile {
     List<Profile> friends;
     int hoursExcercised;
     int workouts;
+    Drawable picture;
+    Drawable coverPhoto;
+
 
     public String getName() {
         return name;
@@ -65,6 +70,21 @@ public class Profile {
         this.workouts = workouts;
     }
 
+    public Drawable getPicture() {
+        return picture;
+    }
+
+    public void setPicture(Drawable picture) {
+        this.picture = picture;
+    }
+
+    public Drawable getCoverPhoto() {
+        return coverPhoto;
+    }
+
+    public void setCoverPhoto(Drawable coverPhoto) {
+        this.coverPhoto = coverPhoto;
+    }
     public Profile(String name, String location, String activity) {
 
         this.name = name;

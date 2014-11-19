@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 /**
@@ -59,6 +60,8 @@ public class ProfileFragment  extends Fragment {
         if (pf != null) {
             updateText();
         }
+        ListView lw = (ListView)rootView.findViewById(R.id.topFriendsList);
+        lw.setEmptyView(rootView.findViewById(R.id.noGoalfriendsMessage));
         return rootView;
     }
 

@@ -14,7 +14,7 @@
         <Button
             android:layout_width="@dimen/button_side"
             android:layout_height="@dimen/button_side"
-            android:text="Find \n Friends"
+            android:text="Find\nFriends"
             android:id="@+id/find_friend_button"
             android:onClick="findFriends"
             android:textColor="@android:color/white"
@@ -25,7 +25,7 @@
         <Button
             android:layout_width="@dimen/button_side"
             android:layout_height="@dimen/button_side"
-            android:text="Schedule \n Workout"
+            android:text="Schedule\nWorkout"
             android:id="@+id/schedule_button"
             android:onClick="scheduleWorkout"
             android:textColor="@android:color/white"
@@ -36,7 +36,7 @@
         <Button
             android:layout_width="@dimen/button_side"
             android:layout_height="@dimen/button_side"
-            android:text="Motivate \n Friend"
+            android:text="Motivate\nFriend"
             android:id="@+id/motivate_button"
             android:onClick="motivate"
             android:textColor="@android:color/white"
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No Notifications"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             />
     </RelativeLayout>
 

@@ -49,7 +49,7 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
         setContentView(R.layout.activity_main);
 
         Firebase.setAndroidContext(this);
-        myProfile = new Profile("Dirk Nowitzski", "Arrillaga", "Weight Lifting");
+        myProfile = new Profile("Tiger Woods", "Arrillaga", "Weight Lifting");
 
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();

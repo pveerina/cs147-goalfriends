@@ -23,7 +23,6 @@ public class FindFriendActivity extends Activity {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         fb = new Firebase("https://goalfriends.firebaseio.com/");
-
     }
     @Override
     protected void onStart() {
