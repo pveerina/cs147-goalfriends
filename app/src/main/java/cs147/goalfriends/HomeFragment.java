@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 
 /**
  * Created by pveerina on 11/18/14.
@@ -37,6 +38,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        ListView lw = (ListView)rootView.findViewById(R.id.notificationList);
+        lw.setEmptyView(rootView.findViewById(R.id.noNotificationMessage));
         return rootView;
     }
 
