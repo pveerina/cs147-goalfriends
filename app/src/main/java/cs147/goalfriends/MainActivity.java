@@ -34,7 +34,6 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
      * {@link android.support.v13.app.FragmentStatePagerAdapter}.
      */
     SectionsPagerAdapter mSectionsPagerAdapter;
-    Profile myProfile;
 
 
 
@@ -49,7 +48,7 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
         setContentView(R.layout.activity_main);
 
         Firebase.setAndroidContext(this);
-        myProfile = new Profile("Tiger Woods", "Arrillaga", "Weight Lifting");
+
 
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();
@@ -142,7 +141,7 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
                 return HomeFragment.newInstance(position +1);
             } else if (position == 1) {
                 ProfileFragment pf = ProfileFragment.newInstance(position + 1);
-                pf.setProfile(myProfile);
+                pf.setProfile(((GoalfriendsApplication)getApplication()).getProfile());
                 return pf;
             } else {
                 return PlaceholderFragment.newInstance(position + 1);
@@ -219,10 +218,5 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
         intent.putExtra(NEXT_ACTIVITY_EXTRA, MotivateActivity.class.getSimpleName());
         startActivity(intent);
     }
-
-    public Profile getMyProfile() {
-        return myProfile;
-    }
-
 
 }

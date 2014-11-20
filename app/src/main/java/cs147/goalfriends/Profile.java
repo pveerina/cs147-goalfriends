@@ -1,7 +1,9 @@
 package cs147.goalfriends;
 
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +18,7 @@ public class Profile {
     int workouts;
     Drawable picture;
     Drawable coverPhoto;
-
+    List<String> recentActivity;
 
     public String getName() {
         return name;
@@ -85,10 +87,28 @@ public class Profile {
     public void setCoverPhoto(Drawable coverPhoto) {
         this.coverPhoto = coverPhoto;
     }
-    public Profile(String name, String location, String activity) {
 
+    public List<String> getRecentActivity() {
+        return recentActivity;
+    }
+
+    public void setRecentActivity(List<String> recentActivity) {
+        this.recentActivity = recentActivity;
+    }
+
+    public void addRecentActivity(String message) {
+        recentActivity.add(message);
+    }
+
+    public Profile(String name, String location, String activity) {
         this.name = name;
         this.location = location;
         this.activity = activity;
+        recentActivity = new ArrayList<String>();
+        friends = new ArrayList<Profile>();
+        hoursExcercised = 0;
+        workouts = 0;
+//        picture = Resources.getSystem().getDrawable(R.drawable.default_profile);
+//        coverPhoto = Resources.getSystem().getDrawable(R.drawable.default_cover);
     }
 }

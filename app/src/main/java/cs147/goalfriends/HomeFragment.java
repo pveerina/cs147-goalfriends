@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 /**
@@ -17,6 +19,7 @@ public class HomeFragment extends Fragment {
      * The fragment argument representing the section number for this
      * fragment.
      */
+    ListView notificationList;
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     /**
@@ -38,10 +41,15 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-        ListView lw = (ListView)rootView.findViewById(R.id.notificationList);
-        lw.setEmptyView(rootView.findViewById(R.id.noNotificationMessage));
+        notificationList = (ListView)rootView.findViewById(R.id.notificationList);
+        notificationList.setAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,((GoalfriendsApplication) (getActivity().getApplication())).getNotifications()));
+        notificationList.setEmptyView(rootView.findViewById(R.id.noNotificationMessage));
         return rootView;
     }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((ArrayAdapter<String>)notificationList.getAdapter()).notifyDataSetChanged();
+    }
 }

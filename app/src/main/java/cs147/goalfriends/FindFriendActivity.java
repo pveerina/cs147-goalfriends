@@ -2,19 +2,23 @@ package cs147.goalfriends;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ListActivity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListAdapter;
 
 import com.firebase.client.Firebase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by pveerina on 11/18/14.
  */
-public class FindFriendActivity extends Activity {
+public class FindFriendActivity extends ListActivity {
     Firebase fb;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,15 @@ public class FindFriendActivity extends Activity {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         fb = new Firebase("https://goalfriends.firebaseio.com/");
+        List<Profile> profiles = new ArrayList<Profile>();
+        Profile p1 = new Profile("Tom Brady", "Old Arrillaga Gym", "Weight Lifting");
+        p1.setPicture(getResources().getDrawable(R.drawable.brady_profile));
+        Profile p2 = new Profile("Michael Jordan", "Flomo Courts", "Basketball");
+        p2.setPicture(getResources().getDrawable(R.drawable.jodan_profile));
+        profiles.add(p1);
+        profiles.add(p2);
+        ListAdapter la = new ProfileArrayAdapter(this, profiles, 1);
+        setListAdapter(la);
     }
     @Override
     protected void onStart() {

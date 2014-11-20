@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F0F0F0"
+    android:padding="20dp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pick Friend"
-        android:id="@+id/button"
-        android:layout_gravity="center_horizontal"
-        android:onClick="launchNext"/>
+    <ListView android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:layout_weight="1"
+        android:drawSelectorOnTop="false"/>
+
+    <TextView android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:background="#FFFFFF"
+        android:text="No Goalfriends Added :("
+        android:gravity="center"/>
 </LinearLayout>

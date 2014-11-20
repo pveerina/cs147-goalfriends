@@ -2,18 +2,25 @@ package cs147.goalfriends;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.SimpleAdapter;
 
 import com.firebase.client.Firebase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by pveerina on 11/18/14.
  */
-public class FriendPickerActivity extends Activity {
+public class FriendPickerActivity extends ListActivity {
     public static final String PICKED_FRIEND_EXTRA = "pickedfriend";
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,8 +28,6 @@ public class FriendPickerActivity extends Activity {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_friend_picker);
-
-
     }
     @Override
     protected void onStart() {

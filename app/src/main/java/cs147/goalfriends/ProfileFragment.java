@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.pkmmte.view.CircularImageView;
 
 /**
  * Created by pveerina on 11/18/14.
@@ -40,13 +43,22 @@ public class ProfileFragment  extends Fragment {
     public void setProfile(Profile pf) {
         this.pf = pf;
         if (rootView != null) {
-
+            updateView();
         }
     }
 
-    private void updateText() {
+    private void updateView() {
+        ImageView cover = (ImageView) rootView.findViewById(R.id.coverphoto);
+        CircularImageView profpic = (CircularImageView) rootView.findViewById(R.id.profpic);
+
+        cover.setBackground(pf.coverPhoto);
+        profpic.setBackground(pf.picture);
+
         TextView tv = (TextView) rootView.findViewById(R.id.myname);
         tv.setText(pf.name);
+
+
+
     }
 
 
@@ -58,7 +70,7 @@ public class ProfileFragment  extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_profile, container, false);
         if (pf != null) {
-            updateText();
+            updateView();
         }
         ListView lw = (ListView)rootView.findViewById(R.id.topFriendsList);
         lw.setEmptyView(rootView.findViewById(R.id.noGoalfriendsMessage));
