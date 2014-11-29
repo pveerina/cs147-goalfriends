@@ -14,33 +14,29 @@
         <Button
             android:layout_width="@dimen/button_side"
             android:layout_height="@dimen/button_side"
-            android:text="Find\nFriends"
             android:id="@+id/find_friend_button"
             android:onClick="findFriends"
-            android:textColor="@android:color/white"
-            android:background="@color/teal"
+            android:textColor="@android:color/black"
+            android:background="@drawable/search13"
             android:layout_marginRight="10dp"
             />
 
         <Button
             android:layout_width="@dimen/button_side"
             android:layout_height="@dimen/button_side"
-            android:text="Schedule\nWorkout"
             android:id="@+id/schedule_button"
             android:onClick="scheduleWorkout"
-            android:textColor="@android:color/white"
-            android:background="@color/teal"
+            android:textColor="@android:color/black"
+            android:background="@drawable/schedule7"
             android:layout_marginRight="10dp"
             />
 
         <Button
             android:layout_width="@dimen/button_side"
             android:layout_height="@dimen/button_side"
-            android:text="Motivate\nFriend"
             android:id="@+id/motivate_button"
             android:onClick="motivate"
-            android:textColor="@android:color/white"
-            android:background="@color/teal"/>
+            android:background="@drawable/motivate2"/>
     </LinearLayout>
 
     <TextView
