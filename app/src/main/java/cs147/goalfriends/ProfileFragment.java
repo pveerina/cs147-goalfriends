@@ -48,17 +48,14 @@ public class ProfileFragment  extends Fragment {
     }
 
     private void updateView() {
-        ImageView cover = (ImageView) rootView.findViewById(R.id.coverphoto);
+//        ImageView cover = (ImageView) rootView.findViewById(R.id.coverphoto);
         CircularImageView profpic = (CircularImageView) rootView.findViewById(R.id.profpic);
 
-        cover.setBackground(pf.coverPhoto);
-        profpic.setBackground(pf.picture);
+//        cover.setBackground(pf.coverPhoto);
+//        profpic.setImageResource(pf.picture);
 
         TextView tv = (TextView) rootView.findViewById(R.id.myname);
         tv.setText(pf.name);
-
-
-
     }
 
 

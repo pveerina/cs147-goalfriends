@@ -28,6 +28,19 @@ public class FriendPickerActivity extends ListActivity {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_friend_picker);
+
+        Profile me = ((GoalfriendsApplication)getApplication()).getProfile();
+        Intent i = getIntent();
+        String nextActivity = i.getStringExtra(MainActivity.NEXT_ACTIVITY_EXTRA);
+        ListAdapter la;
+
+        if (nextActivity.equals(ScheduleWorkoutActivity.class.getSimpleName())) {
+            la = new ProfileArrayAdapter(this, me.friends, 2);
+        } else {
+            la = new ProfileArrayAdapter(this, me.friends, 3);
+        }
+
+        setListAdapter(la);
     }
     @Override
     protected void onStart() {
@@ -53,21 +66,6 @@ public class FriendPickerActivity extends ListActivity {
     protected void onDestroy() {
         super.onDestroy();
         // The activity is about to be destroyed.
-    }
-
-    public void launchNext(View v) {
-        Intent i = getIntent();
-        String nextActivity = i.getStringExtra(MainActivity.NEXT_ACTIVITY_EXTRA);
-        if (nextActivity.equals(ScheduleWorkoutActivity.class.getSimpleName())) {
-            Intent intent = new Intent(this, ScheduleWorkoutActivity.class);
-            intent.putExtra(PICKED_FRIEND_EXTRA, "friendid");
-            startActivity(intent);
-        } else {
-            Intent intent = new Intent(this, MotivateActivity.class);
-            intent.putExtra(PICKED_FRIEND_EXTRA, "friendid");
-            startActivity(intent);
-        }
-
     }
 
     @Override

@@ -16,9 +16,12 @@ public class Profile {
     List<Profile> friends;
     int hoursExcercised;
     int workouts;
-    Drawable picture;
-    Drawable coverPhoto;
+    int picture;
+    int coverPhoto;
     List<String> recentActivity;
+    String availability;
+    String lastEvent;
+    String cancellations;
 
     public String getName() {
         return name;
@@ -72,19 +75,19 @@ public class Profile {
         this.workouts = workouts;
     }
 
-    public Drawable getPicture() {
+    public int getPicture() {
         return picture;
     }
 
-    public void setPicture(Drawable picture) {
+    public void setPicture(int picture) {
         this.picture = picture;
     }
 
-    public Drawable getCoverPhoto() {
+    public int getCoverPhoto() {
         return coverPhoto;
     }
 
-    public void setCoverPhoto(Drawable coverPhoto) {
+    public void setCoverPhoto(int coverPhoto) {
         this.coverPhoto = coverPhoto;
     }
 
@@ -100,7 +103,22 @@ public class Profile {
         recentActivity.add(message);
     }
 
-    public Profile(String name, String location, String activity) {
+    public boolean isFriend(Profile p) {
+        for (Profile friend : friends) {
+            if (friend.name.equals(p.name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String getAvailability() {
+        return availability;
+    }
+
+
+    public Profile(String name, String location, String activity, String availability,
+                   String lastEvent, String cancellations) {
         this.name = name;
         this.location = location;
         this.activity = activity;
@@ -108,6 +126,9 @@ public class Profile {
         friends = new ArrayList<Profile>();
         hoursExcercised = 0;
         workouts = 0;
+        this.availability = availability;
+        this.lastEvent = lastEvent;
+        this.cancellations = cancellations;
 //        picture = Resources.getSystem().getDrawable(R.drawable.default_profile);
 //        coverPhoto = Resources.getSystem().getDrawable(R.drawable.default_cover);
     }

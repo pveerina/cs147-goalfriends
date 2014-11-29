@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.firebase.client.Firebase;
+
 /**
  * Created by pveerina on 11/18/14.
  */
@@ -19,6 +21,7 @@ public class HomeFragment extends Fragment {
      * The fragment argument representing the section number for this
      * fragment.
      */
+    Firebase fb;
     ListView notificationList;
     private static final String ARG_SECTION_NUMBER = "section_number";
 
@@ -35,14 +38,17 @@ public class HomeFragment extends Fragment {
     }
 
     public HomeFragment() {
+        fb = new Firebase("https://goalfriends.firebaseio.com/");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         notificationList = (ListView)rootView.findViewById(R.id.notificationList);
-        notificationList.setAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,((GoalfriendsApplication) (getActivity().getApplication())).getNotifications()));
+        notificationList.setAdapter(((GoalfriendsApplication) getActivity().getApplication()).getNotificationListAdapter());
         notificationList.setEmptyView(rootView.findViewById(R.id.noNotificationMessage));
         return rootView;
     }

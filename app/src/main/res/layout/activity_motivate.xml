@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        >
+        <ImageView
+            android:id="@+id/coverphoto_m"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/default_cover"
+            android:alpha=".7"
+            />
+
+        <com.pkmmte.view.CircularImageView
+            android:id="@+id/profpic_m"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/tiger_profile"
+            app:border_color="#EEEEEE"
+            app:border_width="4dp"
+            app:shadow="true"
+            android:layout_gravity="center_horizontal|bottom" />
+    </FrameLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -10,4 +33,43 @@
         android:text="Motivate"
         android:id="@+id/textView9"
         android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="@dimen/button_side"
+            android:layout_height="@dimen/button_side"
+            android:text="Send Music"
+            android:id="@+id/send_music"
+            android:onClick="sendSong"
+            android:textColor="@android:color/white"
+            android:background="@color/teal"
+            android:layout_marginRight="10dp"
+            />
+
+        <Button
+            android:layout_width="@dimen/button_side"
+            android:layout_height="@dimen/button_side"
+            android:text="Send Message"
+            android:id="@+id/send_message"
+            android:onClick="sendMessage"
+            android:textColor="@android:color/white"
+            android:background="@color/teal"
+            android:layout_marginRight="10dp"
+            />
+
+        <Button
+            android:layout_width="@dimen/button_side"
+            android:layout_height="@dimen/button_side"
+            android:text="Send Reminder"
+            android:onClick="sendReminder"
+            android:id="@+id/send_reminder"
+            android:textColor="@android:color/white"
+            android:background="@color/teal"/>
+    </LinearLayout>
 </LinearLayout>

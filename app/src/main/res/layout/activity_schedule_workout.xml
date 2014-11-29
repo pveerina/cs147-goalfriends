@@ -1,13 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:background="@color/gray">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="12dp"
+        android:background="@android:color/white">
+
+        <com.pkmmte.view.CircularImageView
+            android:id="@+id/profpic_sw"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/tiger_profile"
+            app:border_color="#EEEEEE"
+            app:border_width="4dp"
+            app:shadow="true"
+            android:paddingRight="10dp"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/firstLine_sw"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/profpic_sw"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="Location"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/secondLine_sw"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_below="@id/firstLine_sw"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_toRightOf="@id/profpic_sw"
+            android:gravity="center_vertical"
+            android:text="Name"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/thirdLine_sw"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_below="@id/secondLine_sw"
+            android:layout_toRightOf="@id/profpic_sw"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="Activity"
+            android:textSize="12sp" />
+    </RelativeLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+
+
+
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Schedule Workout"
-        android:id="@+id/textView8"
-        android:layout_gravity="center_horizontal" />
+        android:padding="12dp"
+        android:layout_margin="20dp"
+        android:background="@android:color/white">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Lets Workout..."
+            android:id="@+id/textView8"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/date_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView8"
+            android:text="Date:"/>
+        <Spinner
+            android:id="@+id/date_spinner"
+            android:layout_below="@id/date_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+             />
+        <TextView
+            android:paddingTop="5dp"
+            android:id="@+id/time_label"
+            android:layout_below="@id/date_spinner"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time:"/>
+        <Spinner
+            android:id="@+id/time_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/time_label"
+             />
+
+        <TextView
+            android:id="@+id/location_label"
+            android:layout_below="@id/textView8"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location:"/>
+        <Spinner
+            android:id="@+id/location_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/location_label"
+            />
+
+        <TextView
+            android:paddingTop="5dp"
+            android:id="@+id/activity_label"
+            android:layout_below="@id/location_spinner"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activity:"/>
+        <Spinner
+            android:id="@+id/activity_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/activity_label"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Schedule Workout"/>
+    </RelativeLayout>
 </LinearLayout>

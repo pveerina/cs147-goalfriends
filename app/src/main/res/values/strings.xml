@@ -7,5 +7,47 @@
     <string name="title_section3">Activity</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string-array
+        name="motivational_messages">
+        <item>You\'re almost there!</item>
+        <item>Keep up the awesome work!</item>
+        <item>You are seriously losing shape. Work out more!</item>
 
+    </string-array>
+
+    <string-array
+        name="motivational_songs">
+        <item>Eye Of the Tiger - Survivor</item>
+        <item>Thunderstruck - ACDC</item>
+
+    </string-array>
+
+    <string-array
+        name="activities">
+        <item>Weight Lifting</item>
+        <item>Basketball</item>
+        <item>Soccer</item>
+        <item>Running</item>
+
+    </string-array>
+
+    <string-array
+        name="Date">
+        <item>Today</item>
+        <item>Tomorrow</item>
+    </string-array>
+
+    <string-array
+        name="Times">
+        <item>2-3pm</item>
+        <item>3-4pm</item>
+        <item>4-5pm</item>
+        <item>5-6pm</item>
+    </string-array>
+
+    <string-array
+        name="Locations">
+        <item>Old Arrillaga Gym</item>
+
+    </string-array>
 </resources>

@@ -19,22 +19,23 @@ import java.util.List;
  * Created by pveerina on 11/18/14.
  */
 public class FindFriendActivity extends ListActivity {
-    Firebase fb;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_friend);
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        fb = new Firebase("https://goalfriends.firebaseio.com/");
-        List<Profile> profiles = new ArrayList<Profile>();
-        Profile p1 = new Profile("Tom Brady", "Old Arrillaga Gym", "Weight Lifting");
-        p1.setPicture(getResources().getDrawable(R.drawable.brady_profile));
-        Profile p2 = new Profile("Michael Jordan", "Flomo Courts", "Basketball");
-        p2.setPicture(getResources().getDrawable(R.drawable.jodan_profile));
-        profiles.add(p1);
-        profiles.add(p2);
-        ListAdapter la = new ProfileArrayAdapter(this, profiles, 1);
+        List<Profile> profiles = ((GoalfriendsApplication)getApplication()).getProfiles();
+        List<Profile> availableFriends = new ArrayList<Profile>();
+        Profile me = ((GoalfriendsApplication)getApplication()).getProfile();
+
+        for (Profile profile : profiles) {
+            if (!me.isFriend(profile)) {
+                availableFriends.add(profile);
+            }
+        }
+
+        ListAdapter la = new ProfileArrayAdapter(this, availableFriends, 1);
         setListAdapter(la);
     }
     @Override
@@ -64,7 +65,7 @@ public class FindFriendActivity extends ListActivity {
     }
 
     public void addFriend(View v) {
-        fb.child("addfriend").setValue("me->tom");
+        ;
     }
 
     @Override
