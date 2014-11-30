@@ -56,10 +56,11 @@ public class ProfileArrayAdapter extends ArrayAdapter<Profile> {
             textView2.setText(values.get(position).name);
             textView3.setText("Activity: " + values.get(position).activity);
             Button btn = (Button) rowView.findViewById(R.id.add_friend_button);
+            btn.setText("Request Goalfriend");
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Firebase fb = new Firebase("https://goalfriends.firebaseio.com/");
+//                    Firebase fb = new Firebase("https://goalfriends.firebaseio.com/");
                     final String addedFriend = values.get(position).name;
 
 //                    fb.child("addfriend").setValue( ((GoalfriendsApplication) context.getApplicationContext()).getProfile().name + values.get(position).name );
@@ -107,9 +108,9 @@ public class ProfileArrayAdapter extends ArrayAdapter<Profile> {
                 }
             });
         } else if (screen_id == 3) {
-            textView.setText("Cancellations: " + values.get(position).getActivity());
+            textView.setText("Cancellations: " + values.get(position).cancellations);
             textView2.setText(values.get(position).name);
-            textView3.setText("Last Event: " + values.get(position).getAvailability());
+            textView3.setText("Last Event: " + values.get(position).lastEvent);
             Button btn = (Button) rowView.findViewById(R.id.add_friend_button);
             btn.setText("Motivate");
             btn.setOnClickListener(new View.OnClickListener() {

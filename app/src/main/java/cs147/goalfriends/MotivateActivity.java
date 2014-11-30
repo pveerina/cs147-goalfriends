@@ -101,8 +101,6 @@ public class MotivateActivity extends Activity {
     }
 
 
-
-
     public static class SendMessageDialog extends DialogFragment {
         List mSelectedItems;
         @Override
