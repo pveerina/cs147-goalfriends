@@ -57,23 +57,24 @@ public class MotivateActivity extends Activity {
         ((CircularImageView)findViewById(R.id.profpic_m)).setImageResource(selectedFriend.picture);
 
     }
+
     @Override
     protected void onPause() {
         super.onPause();
         // Another activity is taking focus (this activity is about to be "paused").
     }
+
     @Override
     protected void onStop() {
         super.onStop();
         // The activity is no longer visible (it is now "stopped")
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
         // The activity is about to be destroyed.
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -87,21 +88,26 @@ public class MotivateActivity extends Activity {
     }
 
     public void sendSong(View view) {
-        SendMessageDialog  d = new SendMessageDialog();
+        SendSongDialog  d = new SendSongDialog();
+        d.name = selectedFriend.name;
         FragmentManager fm = getFragmentManager();
         d.show(fm, "tag");
     }
+
     public void sendReminder(View view) {
 
     }
+
     public void sendMessage(View view) {
         SendMessageDialog  d = new SendMessageDialog();
+        d.name = selectedFriend.name;
         FragmentManager fm = getFragmentManager();
         d.show(fm, "tag");
     }
 
 
     public static class SendMessageDialog extends DialogFragment {
+        String name;
         List mSelectedItems;
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -122,6 +128,7 @@ public class MotivateActivity extends Activity {
 
                         @Override
                         public void onClick(DialogInterface dialog, int id) {
+                            ((GoalfriendsApplication) getActivity().getApplication()).getNotifications().add(0, "Sent motivational message to " + name);
 
                         }
                     })
@@ -138,13 +145,15 @@ public class MotivateActivity extends Activity {
     }
 
     public static class SendSongDialog extends DialogFragment {
+        String name;
+
         List mSelectedItems;
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             mSelectedItems = new ArrayList();  // Where we track the selected items
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             // Set the dialog title
-            builder.setTitle("Motivational Message")
+            builder.setTitle("Motivational Song")
                     // Specify the list array, the items to be selected by default (null for none),
                     // and the listener through which to receive callbacks when items are selected
                     .setSingleChoiceItems(R.array.motivational_songs, 0, new DialogInterface.OnClickListener() {
@@ -158,6 +167,8 @@ public class MotivateActivity extends Activity {
 
                         @Override
                         public void onClick(DialogInterface dialog, int id) {
+
+                            ((GoalfriendsApplication) getActivity().getApplication()).getNotifications().add(0, "Sent motivational song to " + name);
 
                         }
                     })

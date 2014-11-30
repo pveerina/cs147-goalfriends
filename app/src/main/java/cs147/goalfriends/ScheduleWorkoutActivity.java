@@ -2,12 +2,15 @@ package cs147.goalfriends;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.NavUtils;
 import android.text.format.DateFormat;
 import android.view.MenuItem;
@@ -120,5 +123,32 @@ public class ScheduleWorkoutActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void scheduleWorkout(View view) {
+        final Activity ref = this;
+        new AlertDialog.Builder(this)
+                .setTitle("Sent Request")
+                .setMessage("You've sent a workout request to " +  selectedFriend.name)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Execute some code after 2 seconds have passed
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            public void run() {
+                                ((GoalfriendsApplication) getApplication()).getNotifications().add(0, "Workout scheduled with " + selectedFriend.name);
+
+//                                ((GoalfriendsApplication) getApplication()).getProfile().addFriend();
+
+                                ((GoalfriendsApplication) getApplication()).refreshNotificationList();
+                            }
+                        }, 5000);
+
+                        ref.setResult(2);
+                        ref.finish();
+
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_info)
+                .show();
+    }
 
 }

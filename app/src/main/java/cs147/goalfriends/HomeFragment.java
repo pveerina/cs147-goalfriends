@@ -21,7 +21,6 @@ public class HomeFragment extends Fragment {
      * The fragment argument representing the section number for this
      * fragment.
      */
-    Firebase fb;
     ListView notificationList;
     private static final String ARG_SECTION_NUMBER = "section_number";
 
@@ -38,7 +37,7 @@ public class HomeFragment extends Fragment {
     }
 
     public HomeFragment() {
-        fb = new Firebase("https://goalfriends.firebaseio.com/");
+
     }
 
     @Override

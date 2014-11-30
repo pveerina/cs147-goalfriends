@@ -104,7 +104,7 @@ public class ProfileArrayAdapter extends ArrayAdapter<Profile> {
                 public void onClick(View v) {
                     Intent intent = new Intent(context, ScheduleWorkoutActivity.class);
                     intent.putExtra(PICKED_FRIEND_EXTRA, values.get(position).name);
-                    context.startActivity(intent);
+                    ((Activity)context ).startActivityForResult(intent, 0);
                 }
             });
         } else if (screen_id == 3) {
@@ -118,7 +118,7 @@ public class ProfileArrayAdapter extends ArrayAdapter<Profile> {
                 public void onClick(View v) {
                     Intent intent = new Intent(context, MotivateActivity.class);
                     intent.putExtra(PICKED_FRIEND_EXTRA, values.get(position).name);
-                    context.startActivity(intent);
+                    ((Activity)context ).startActivityForResult(intent, 0);
                 }
             });
         }

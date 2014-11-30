@@ -1,7 +1,15 @@
 package cs147.goalfriends;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
+
+import com.pkmmte.view.CircularImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +30,8 @@ public class Profile {
     String availability;
     String lastEvent;
     String cancellations;
+    ProfileAdapter topFriendsAdapter;
+    ArrayList<Profile> topFriends;
 
     public String getName() {
         return name;
@@ -53,6 +63,8 @@ public class Profile {
 
     public void addFriend(Profile friend) {
         friends.add(friend);
+        topFriends.add(0, friend);
+        topFriendsAdapter.notifyDataSetChanged();
     }
 
     public void setFriends(List<Profile> friends) {
@@ -118,7 +130,7 @@ public class Profile {
 
 
     public Profile(String name, String location, String activity, String availability,
-                   String lastEvent, String cancellations) {
+                   String lastEvent, String cancellations, Context cxt) {
         this.name = name;
         this.location = location;
         this.activity = activity;
@@ -129,7 +141,34 @@ public class Profile {
         this.availability = availability;
         this.lastEvent = lastEvent;
         this.cancellations = cancellations;
+        topFriends = new ArrayList<Profile>();
+        topFriendsAdapter = new ProfileAdapter(cxt, topFriends);
 //        picture = Resources.getSystem().getDrawable(R.drawable.default_profile);
 //        coverPhoto = Resources.getSystem().getDrawable(R.drawable.default_cover);
+    }
+
+
+    public class ProfileAdapter extends ArrayAdapter<Profile> {
+        public ProfileAdapter(Context context, ArrayList<Profile> users) {
+            super(context, 0, users);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            // Get the data item for this position
+            Profile user = getItem(position);
+            // Check if an existing view is being reused, otherwise inflate the view
+            if (convertView == null) {
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.top_friend_row, parent, false);
+            }
+            // Lookup view for data population
+            TextView tvName = (TextView) convertView.findViewById(R.id.topProfileName);
+            CircularImageView profPic = (CircularImageView) convertView.findViewById(R.id.topProfilePic);
+            // Populate the data into the template view using the data object
+            tvName.setText(user.name);
+            profPic.setImageResource(user.picture);
+            // Return the completed view to render on screen
+            return convertView;
+        }
     }
 }

@@ -1,15 +1,21 @@
 package cs147.goalfriends;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.pkmmte.view.CircularImageView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by pveerina on 11/18/14.
@@ -22,6 +28,7 @@ public class ProfileFragment  extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
     Profile pf;
     View rootView;
+
 
 
     /**
@@ -70,8 +77,15 @@ public class ProfileFragment  extends Fragment {
             updateView();
         }
         ListView lw = (ListView)rootView.findViewById(R.id.topFriendsList);
+        lw.setAdapter(pf.topFriendsAdapter);
         lw.setEmptyView(rootView.findViewById(R.id.noGoalfriendsMessage));
         return rootView;
     }
 
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 }

@@ -47,7 +47,7 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Firebase.setAndroidContext(this);
+//        Firebase.setAndroidContext(this);
 
 
         // Set up the action bar.
