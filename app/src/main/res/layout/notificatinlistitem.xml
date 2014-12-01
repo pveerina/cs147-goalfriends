@@ -13,15 +13,61 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/text1"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:textColor="@android:color/black"
-    android:textAppearance="?android:attr/textAppearanceListItemSmall"
-    android:gravity="center_vertical"
-    android:paddingStart="4dp"
-    android:paddingEnd="4dp"
-    android:minHeight="?android:attr/listPreferredItemHeightSmall"
-    />
+    android:orientation="vertical"
+    android:padding="4dp">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:gravity="center_vertical"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:minHeight="?android:attr/listPreferredItemHeightSmall"
+            />
+
+        <!--<Button-->
+            <!--android:id="@+id/expandable_toggle_button"-->
+            <!--android:text="More"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignBottom="@id/text1"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_alignTop="@id/text1"/>-->
+
+
+    </RelativeLayout>
+
+    <!-- this is the expandable view that is initially hidden and will slide out when the more button is pressed -->
+    <!--<LinearLayout-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:id="@+id/expandable"-->
+        <!--android:background="#000000">-->
+
+        <!--<!- put whatever you want in the expandable view -->-->
+        <!--<Button-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:layout_weight="0.5"-->
+            <!--android:text="Action A" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/details"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:layout_weight="0.5"-->
+            <!--android:text="Action B"/>-->
+
+    <!--</LinearLayout>-->
+</LinearLayout>
+

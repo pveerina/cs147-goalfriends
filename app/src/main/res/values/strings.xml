@@ -24,10 +24,10 @@
 
     <string-array
         name="activities">
-        <item>Weight Lifting</item>
-        <item>Basketball</item>
-        <item>Soccer</item>
-        <item>Running</item>
+        <item>lift weights</item>
+        <item>play basketball</item>
+        <item>play soccer</item>
+        <item>go running</item>
 
     </string-array>
 

@@ -7,10 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.pkmmte.view.CircularImageView;
+import com.tjerkw.slideexpandable.library.SlideExpandableListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +27,8 @@ public class GoalfriendsApplication extends Application {
     private Profile profile;
     private List<Profile> profiles;
     private List<String> notifications;
-    private ArrayAdapter<String> notificationListAdapter;
+    private ListAdapter notificationListAdapter;
+    private ArrayAdapter<String> activityList;
 
     public static GoalfriendsApplication getInstance() {
         return sInstance;
@@ -42,7 +45,7 @@ public class GoalfriendsApplication extends Application {
         return notificationListAdapter;
     }
     public void refreshNotificationList() {
-        notificationListAdapter.notifyDataSetChanged();
+        ((BaseAdapter) notificationListAdapter).notifyDataSetChanged();
     }
 
     @Override
@@ -65,7 +68,12 @@ public class GoalfriendsApplication extends Application {
         profiles.add(p1);
         profiles.add(p2);
         notifications = new ArrayList<String>();
-        notificationListAdapter = new ArrayAdapter<String>(this, R.layout.notificatinlistitem, notifications);
+
+
+
+        notificationListAdapter =
+                new ArrayAdapter<String>(this, R.layout.notificatinlistitem, R.id.text1, notifications);
+
 
     }
 

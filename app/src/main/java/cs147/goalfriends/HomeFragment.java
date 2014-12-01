@@ -12,6 +12,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.firebase.client.Firebase;
+import com.tjerkw.slideexpandable.library.SlideExpandableListAdapter;
 
 /**
  * Created by pveerina on 11/18/14.
@@ -47,7 +48,8 @@ public class HomeFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         notificationList = (ListView)rootView.findViewById(R.id.notificationList);
-        notificationList.setAdapter(((GoalfriendsApplication) getActivity().getApplication()).getNotificationListAdapter());
+        notificationList.setAdapter(
+                ((GoalfriendsApplication) getActivity().getApplication()).getNotificationListAdapter());
         notificationList.setEmptyView(rootView.findViewById(R.id.noNotificationMessage));
         return rootView;
     }
@@ -55,6 +57,6 @@ public class HomeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        ((ArrayAdapter<String>)notificationList.getAdapter()).notifyDataSetChanged();
+        ((GoalfriendsApplication) getActivity().getApplication()).refreshNotificationList();
     }
 }

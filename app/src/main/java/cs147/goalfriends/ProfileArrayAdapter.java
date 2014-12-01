@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.firebase.client.Firebase;
 import com.pkmmte.view.CircularImageView;
 
 import java.util.List;
@@ -65,7 +64,9 @@ public class ProfileArrayAdapter extends ArrayAdapter<Profile> {
 
 //                    fb.child("addfriend").setValue( ((GoalfriendsApplication) context.getApplicationContext()).getProfile().name + values.get(position).name );
 //                    ((GoalfriendsApplication) context.getApplicationContext()).getProfile().addFriend(values.get(position));
-                    ((GoalfriendsApplication) context.getApplicationContext()).getNotifications().add("Sent Goalfriend request to " + addedFriend);
+                    ((GoalfriendsApplication) context.getApplicationContext()).getNotifications().add(0,"Sent Goalfriend request to " + addedFriend);
+                    ((GoalfriendsApplication) context.getApplicationContext()).refreshNotificationList();
+
                     new AlertDialog.Builder(context)
                             .setTitle("Sent Request")
                             .setMessage("You've requested " + values.get(position).name + " to be your Goalfriend")
@@ -76,9 +77,7 @@ public class ProfileArrayAdapter extends ArrayAdapter<Profile> {
                                     handler.postDelayed(new Runnable() {
                                         public void run() {
                                             ((GoalfriendsApplication) context.getApplicationContext()).getNotifications().add(0, addedFriend + " accepted your request");
-
                                             ((GoalfriendsApplication) context.getApplicationContext()).getProfile().addFriend(values.get(position));
-
                                             ((GoalfriendsApplication) context.getApplicationContext()).refreshNotificationList();
                                         }
                                     }, 5000);

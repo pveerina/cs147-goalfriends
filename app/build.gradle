@@ -31,5 +31,6 @@ dependencies {
     compile 'com.android.support:support-v13:20.+'
     compile 'com.firebase:firebase-client-android:2.0.1+'
     compile 'com.pkmmte.view:circularimageview:1.1'
+    compile project(':library')
 
 }

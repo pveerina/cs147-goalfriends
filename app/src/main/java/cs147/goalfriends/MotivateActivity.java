@@ -9,9 +9,11 @@ import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.pkmmte.view.CircularImageView;
@@ -55,6 +57,12 @@ public class MotivateActivity extends Activity {
         // The activity has become visible (it is now "resumed").
         nameText.setText("Motivate " + selectedFriend.name);
         ((CircularImageView)findViewById(R.id.profpic_m)).setImageResource(selectedFriend.picture);
+        Button send_reminder = (Button)findViewById(R.id.send_reminder);
+
+        Profile myprofile = ((GoalfriendsApplication) getApplication()).getProfile();
+        if (!myprofile.scheduledWorkouts.contains(selectedFriend.name)){
+            send_reminder.setVisibility(View.GONE);
+        }
 
     }
 
@@ -95,7 +103,15 @@ public class MotivateActivity extends Activity {
     }
 
     public void sendReminder(View view) {
-
+        new AlertDialog.Builder(this)
+                .setTitle("Sent Reminder")
+                .setMessage("You sent a workout reminder to " + selectedFriend.name)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_info)
+                .show();
     }
 
     public void sendMessage(View view) {
@@ -143,6 +159,8 @@ public class MotivateActivity extends Activity {
 
         }
     }
+
+
 
     public static class SendSongDialog extends DialogFragment {
         String name;

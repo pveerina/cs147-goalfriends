@@ -33,6 +33,10 @@ public class ScheduleWorkoutActivity extends Activity {
     TextView nameText;
     TextView activityText;
     TextView availabilityText;
+    Spinner dateSpinner;
+    Spinner timeSpinner;
+    Spinner activitySpinner;
+    Spinner locationSpinner;
 //    TextView locationText;
 
     @Override
@@ -45,29 +49,29 @@ public class ScheduleWorkoutActivity extends Activity {
         availabilityText = (TextView)findViewById(R.id.secondLine_sw);
         activityText = (TextView)findViewById(R.id.thirdLine_sw);
 
-        Spinner spinner1 = (Spinner) findViewById(R.id.date_spinner);
+        dateSpinner = (Spinner) findViewById(R.id.date_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.Date, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner1.setAdapter(adapter);
+        dateSpinner.setAdapter(adapter);
 
-        Spinner spinner2 = (Spinner) findViewById(R.id.time_spinner);
+        timeSpinner = (Spinner) findViewById(R.id.time_spinner);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
                 R.array.Times, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter2);
+        timeSpinner.setAdapter(adapter2);
 
-        Spinner spinner3 = (Spinner) findViewById(R.id.activity_spinner);
+        activitySpinner = (Spinner) findViewById(R.id.activity_spinner);
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
                 R.array.activities, android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner3.setAdapter(adapter3);
+        activitySpinner.setAdapter(adapter3);
 
-        Spinner spinner4 = (Spinner) findViewById(R.id.location_spinner);
+        locationSpinner = (Spinner) findViewById(R.id.location_spinner);
         ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(this,
                 R.array.Locations, android.R.layout.simple_spinner_item);
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner4.setAdapter(adapter4);
+        locationSpinner.setAdapter(adapter4);
 
 //        locationText = (TextView)findViewById(R.id.location_name);
 
@@ -125,6 +129,9 @@ public class ScheduleWorkoutActivity extends Activity {
 
     public void scheduleWorkout(View view) {
         final Activity ref = this;
+        ((GoalfriendsApplication) getApplication()).getNotifications().add(0, "Workout requested with " + selectedFriend.name);
+        ((GoalfriendsApplication) getApplication()).getProfile().scheduledWorkouts.add(selectedFriend.name);
+        ((GoalfriendsApplication) getApplication()).refreshNotificationList();
         new AlertDialog.Builder(this)
                 .setTitle("Sent Request")
                 .setMessage("You've sent a workout request to " +  selectedFriend.name)
@@ -134,11 +141,10 @@ public class ScheduleWorkoutActivity extends Activity {
                         Handler handler = new Handler();
                         handler.postDelayed(new Runnable() {
                             public void run() {
-                                ((GoalfriendsApplication) getApplication()).getNotifications().add(0, "Workout scheduled with " + selectedFriend.name);
-
-//                                ((GoalfriendsApplication) getApplication()).getProfile().addFriend();
-
+                                ((GoalfriendsApplication) getApplication()).getNotifications().add(0, selectedFriend.name + " accepted your request to " + activitySpinner.getSelectedItem() + " "
+                                        + dateSpinner.getSelectedItem() + ", " + timeSpinner.getSelectedItem() + " at " + locationSpinner.getSelectedItem() );
                                 ((GoalfriendsApplication) getApplication()).refreshNotificationList();
+
                             }
                         }, 5000);
 

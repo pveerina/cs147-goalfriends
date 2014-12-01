@@ -31,6 +31,8 @@ public class Profile {
     String lastEvent;
     String cancellations;
     ProfileAdapter topFriendsAdapter;
+    List<String> scheduledWorkouts;
+
     ArrayList<Profile> topFriends;
 
     public String getName() {
@@ -143,6 +145,7 @@ public class Profile {
         this.cancellations = cancellations;
         topFriends = new ArrayList<Profile>();
         topFriendsAdapter = new ProfileAdapter(cxt, topFriends);
+        scheduledWorkouts = new ArrayList<String>();
 //        picture = Resources.getSystem().getDrawable(R.drawable.default_profile);
 //        coverPhoto = Resources.getSystem().getDrawable(R.drawable.default_cover);
     }
