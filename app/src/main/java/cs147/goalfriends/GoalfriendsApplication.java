@@ -12,7 +12,6 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.pkmmte.view.CircularImageView;
-import com.tjerkw.slideexpandable.library.SlideExpandableListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

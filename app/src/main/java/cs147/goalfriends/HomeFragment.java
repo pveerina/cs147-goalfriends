@@ -12,7 +12,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.firebase.client.Firebase;
-import com.tjerkw.slideexpandable.library.SlideExpandableListAdapter;
 
 /**
  * Created by pveerina on 11/18/14.
