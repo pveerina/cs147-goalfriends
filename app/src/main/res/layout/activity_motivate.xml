@@ -2,8 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:background="@color/gray">
 
-    android:layout_height="match_parent">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -44,32 +45,26 @@
         <Button
             android:layout_width="@dimen/button_side"
             android:layout_height="@dimen/button_side"
-            android:text="Send Music"
             android:id="@+id/send_music"
             android:onClick="sendSong"
-            android:textColor="@android:color/white"
-            android:background="@color/teal"
+            android:background="@drawable/music_black"
             android:layout_marginRight="10dp"
             />
 
         <Button
             android:layout_width="@dimen/button_side"
             android:layout_height="@dimen/button_side"
-            android:text="Send Message"
             android:id="@+id/send_message"
             android:onClick="sendMessage"
-            android:textColor="@android:color/white"
-            android:background="@color/teal"
+            android:background="@drawable/message_black"
             android:layout_marginRight="10dp"
             />
 
         <Button
             android:layout_width="@dimen/button_side"
             android:layout_height="@dimen/button_side"
-            android:text="Send Reminder"
             android:onClick="sendReminder"
             android:id="@+id/send_reminder"
-            android:textColor="@android:color/white"
-            android:background="@color/teal"/>
+            android:background="@drawable/reminder_black"/>
     </LinearLayout>
 </LinearLayout>

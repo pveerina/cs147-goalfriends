@@ -153,7 +153,7 @@ public class ScheduleWorkoutActivity extends Activity {
 
                     }
                 })
-                .setIcon(android.R.drawable.ic_dialog_info)
+                .setIcon(R.drawable.check)
                 .show();
     }
 

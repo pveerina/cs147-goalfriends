@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,11 +46,17 @@ public class ProfileArrayAdapter extends ArrayAdapter<Profile> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View rowView = inflater.inflate(R.layout.pick_friend_row, parent, false);
 
+        final View test = inflater.inflate(R.layout.notificatinlistitem, parent, false);
+
+
         TextView textView = (TextView) rowView.findViewById(R.id.firstLine);
         TextView textView2 = (TextView) rowView.findViewById(R.id.secondLine);
         TextView textView3 = (TextView) rowView.findViewById(R.id.thirdLine);
         CircularImageView imageView = (CircularImageView) rowView.findViewById(R.id.row_profile_pic);
         imageView.setImageResource(values.get(position).picture);
+
+        CircularImageView dirk = (CircularImageView) test.findViewById(R.id.notification_prof_pic);
+        dirk.setImageResource(values.get(position).picture);
         if (screen_id == 1) {
             textView.setText("Location: " + values.get(position).location);
             textView2.setText(values.get(position).name);
@@ -66,6 +73,7 @@ public class ProfileArrayAdapter extends ArrayAdapter<Profile> {
 //                    ((GoalfriendsApplication) context.getApplicationContext()).getProfile().addFriend(values.get(position));
                     ((GoalfriendsApplication) context.getApplicationContext()).getNotifications().add(0,"Sent Goalfriend request to " + addedFriend);
                     ((GoalfriendsApplication) context.getApplicationContext()).refreshNotificationList();
+
 
                     new AlertDialog.Builder(context)
                             .setTitle("Sent Request")
@@ -86,7 +94,7 @@ public class ProfileArrayAdapter extends ArrayAdapter<Profile> {
                                     ((Activity) context).finish();
                                 }
                             })
-                            .setIcon(android.R.drawable.ic_dialog_info)
+                            .setIcon(R.drawable.check)
                             .show();
 
 

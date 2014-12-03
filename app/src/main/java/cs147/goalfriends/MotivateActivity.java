@@ -110,7 +110,7 @@ public class MotivateActivity extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 })
-                .setIcon(android.R.drawable.ic_dialog_info)
+                .setIcon(R.drawable.check)
                 .show();
     }
 
@@ -164,7 +164,6 @@ public class MotivateActivity extends Activity {
 
     public static class SendSongDialog extends DialogFragment {
         String name;
-
         List mSelectedItems;
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -185,9 +184,7 @@ public class MotivateActivity extends Activity {
 
                         @Override
                         public void onClick(DialogInterface dialog, int id) {
-
                             ((GoalfriendsApplication) getActivity().getApplication()).getNotifications().add(0, "Sent motivational song to " + name);
-
                         }
                     })
                     .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

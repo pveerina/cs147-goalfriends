@@ -9,7 +9,6 @@ import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListAdapter;
-
 import com.firebase.client.Firebase;
 
 import java.util.ArrayList;
@@ -65,7 +64,7 @@ public class FindFriendActivity extends ListActivity {
     }
 
     public void addFriend(View v) {
-        ;
+
     }
 
     @Override
